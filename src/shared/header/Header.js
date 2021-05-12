@@ -15,31 +15,31 @@ export const Header = () => {
         <Text style={styles.headerInfoText}>$1,340.10</Text>
       </View>
 
-      <View style={styles.headerBlank}>
-        <Text style={styles.headerBlankText}>Add bank</Text>
+      <View style={styles.headerAction}>
+        <Text style={styles.headerActionText}>Add bank</Text>
 
-        <View style={styles.headerBlankBtnContainer}>
+        <View style={styles.headerActionBtnContainer}>
           <LinearGradient
-            style={styles.headerBlankGradient}
+            style={styles.headerActionGradient}
             colors={['#6e45e2', '#88d3ce']}
             start={[0, .1]}
             end={[1, .4]}
           >
 
             <TouchableOpacity
-              style={styles.headerBlankBtn}
+              style={styles.headerActionBtn}
               onPress={() => Alert.alert('Simple Button pressed')}
             >
 
               <Image
-                style={styles.headerBlankImg}
+                style={styles.headerActionImg}
                 source={require('../../../assets/img/icons/plus.png')}
               />
             </TouchableOpacity>
           </LinearGradient>
         </View>
 
-        <Text style={styles.headerBlankCaption}>2</Text>
+        <Text style={styles.headerActionCaption}>2</Text>
       </View>
     </View>
   )
@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingTop: 24,
     paddingBottom: 40,
+    paddingHorizontal: 16,
   },
 
   headerInfo: {
@@ -71,8 +72,8 @@ const styles = StyleSheet.create({
   },
 
   headerInfoText: {
-    fontWeight: '500',
     fontSize: 14,
+    fontFamily: 'interBold',
   },
 
   headerInfoImg: {
@@ -81,36 +82,36 @@ const styles = StyleSheet.create({
     marginRight: 4,
   },
 
-  headerBlank: {
+  headerAction: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
   },
 
-  headerBlankBtnContainer: {
+  headerActionBtnContainer: {
     marginRight: 6,
     marginLeft: 6,
   },
 
-  headerBlankGradient: {
+  headerActionGradient: {
     width: 50,
     height: 50,
     borderRadius: 50,
   },
 
-  headerBlankBtn: {
+  headerActionBtn: {
     flex: 1,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
   },
 
-  headerBlankImg: {
+  headerActionImg: {
     width: 24,
     height: 24,
   },
 
-  headerBlankCaption: {
+  headerActionCaption: {
     borderRadius: 50,
     width: 20,
     height: 20,
@@ -118,5 +119,6 @@ const styles = StyleSheet.create({
     borderColor: '#8C93A2',
     color: '#8C93A2',
     textAlign: 'center',
+    fontFamily: 'interBold',
   },
 })

@@ -1,12 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-import { Header } from './src/components/header/Header';
-import { Gallery } from './src/components/gallery/Gallery';
+import { Header } from './src/shared/header/Header';
+import { Gallery } from './src/shared/gallery/Gallery';
+
+import { useFonts } from 'expo-font';
 
 export default function App() {
+  const [loaded] = useFonts({
+    interRegular: require('./assets/fonts/Inter-Regular.ttf'),
+    interBold: require('./assets/fonts/Inter-SemiBold.ttf'),
+  });
+  
+  if (!loaded) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
       <Header />
@@ -14,10 +23,7 @@ export default function App() {
       <Text style={styles.title}> My accounts</Text>
 
       <Gallery />
-
-      <StatusBar style="auto" />
     </View>
-
   );
 }
 
@@ -25,14 +31,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#e7e6ec',
-    paddingHorizontal: 16,
     paddingTop: 10,
   },
 
   title: {
-    fontWeight: '600',
+    fontFamily: 'interBold',
     fontSize: 24,
     color: '#0C0C0E',
     marginBottom: 24,
+    paddingHorizontal: 16,
   }
 });
