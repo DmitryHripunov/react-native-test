@@ -1,21 +1,8 @@
 import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
-import { StyleSheet, View, Text, Image, TouchableOpacity, Alert, SafeAreaView, SectionList, } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity, Alert, } from 'react-native';
 
-const ITEMS = [
-  {
-    title: 'Store',
-    subTitle: 'Electronics',
-    img: require('../../../assets/img/g1.png'),
-  },
-  {
-    title: 'Restore',
-    subTitle: 'Arts',
-    img: require('../../../assets/img/g1.png'),
-  },
-];
-
-export const GalleryItem = ({ title, subTitle, img }) => (
+export const GalleryItem = () => (
   <View style={styles.galleryItem}>
     <View style={styles.galleryImgWrapper}>
       <Image
@@ -41,7 +28,7 @@ export const GalleryItem = ({ title, subTitle, img }) => (
 
         <Image
           style={styles.galleryActionDeleteImg}
-          source={require('../../../assets/img/icons/plus.png')}
+          source={require('../../../assets/img/icons/x.png')}
         />
       </TouchableOpacity>
     </View>

@@ -1,8 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, ScrollView, Text } from 'react-native';
 
 import { Header } from './src/shared/header/Header';
 import { Gallery } from './src/shared/gallery/Gallery';
+import { Spending } from './src/shared/spending/Spending';
+import { PayCards } from './src/shared/payCards/PayCards';
+import { Footer } from './src/shared/footer/Footer';
 
 import { useFonts } from 'expo-font';
 
@@ -17,13 +20,14 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Header />
-
       <Text style={styles.title}> My accounts</Text>
-
       <Gallery />
-    </View>
+      <Spending />
+      <PayCards />
+      <Footer />
+    </ScrollView>
   );
 }
 
@@ -31,7 +35,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#e7e6ec',
-    paddingTop: 10,
   },
 
   title: {

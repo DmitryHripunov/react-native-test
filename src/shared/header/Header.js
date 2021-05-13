@@ -66,9 +66,6 @@ const styles = StyleSheet.create({
     paddingTop: 8,
     paddingLeft: 12,
     paddingRight: 12,
-    shadowColor: 'black',
-    shadowOpacity: .08,
-    elevation: 30,
   },
 
   headerInfoText: {
